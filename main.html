@@ -9,17 +9,26 @@
  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
  crossorigin=""></script>
  <script src="mapscripts.js"></script>
-
+<script src="homemap.geojson" type="text/javascript"></script>
 <head>
 <title>DIE Welt</title>
 </head>
 
 <body style="background-color:#2e2b2b;">
-  <nav class="menu" role='navigation'>
+  <div><nav class="menu" role='navigation'>
   <ol>
-    <li class="menu-item"><a href="main.html"><div>Home</div></a></li>
+    <li class="menu-item"><a href="index.html"><div>Home</div></a></li>
+    <li class="menu-item" aria-haspopup="true">
+      <a href="#0">Maps</a>
+      <ol class="sub-menu" aria-label="submenu">
+        <li class="menu-item"><a href="test.html"><div>Dummy 1</div></a></li>
+        <li class="menu-item"><a href="#0"> <div>Dummy 2</div> </a></li>
+        <li class="menu-item"><a href="#0"><div>Dummy 3</div></a></li>
+      </ol>
+    </li>
   </ol>
-</nav>
+</nav> </div>
 <div id="mapid"></div>
+<script>homemap();</script>
 </body>
 </html>

@@ -155,6 +155,7 @@ function homemap() {
   onEachFeature: onEachFeature
 }).addTo(poiLayer);
 map.on('zoomend', function() {
+    console.log("Zoomend");
     var currentZoom = map.getZoom();
     if (currentZoom > 12) {
         poiLayer.eachLayer(function(layer) {

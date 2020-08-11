@@ -1,34 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-   crossorigin=""/>
- <!-- Make sure you put this AFTER Leaflet's CSS -->
-<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
- integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
- crossorigin=""></script>
- <script src="mapscripts.js"></script>
-<script src="homemap.geojson" type="text/javascript"></script>
+<html>
 <head>
-<title>DIE Welt</title>
+    <title>Login page</title>
 </head>
-
-<body style="background-color:#2e2b2b;">
-  <div><nav class="menu" role='navigation'>
-  <ol>
-    <li class="menu-item"><a href="index.html"><div>Home</div></a></li>
-    <li class="menu-item" aria-haspopup="true">
-      <a href="#0">Maps</a>
-      <ol class="sub-menu" aria-label="submenu">
-        <li class="menu-item"><a href="test.html"><div>Dummy 1</div></a></li>
-        <li class="menu-item"><a href="#0"> <div>Dummy 2</div> </a></li>
-        <li class="menu-item"><a href="#0"><div>Dummy 3</div></a></li>
-      </ol>
-    </li>
-  </ol>
-</nav> </div>
-<div id="mapid"></div>
-<script>homemap();</script>
+<body>
+<form>
+    <label for="pswd">Enter your password: </label>
+    <input type="password" id="pswd">
+    <input type="button" value="Submit" onclick="checkPswd();" />
+</form>
+<!--Function to check password the already set password is admin-->
+<script type="text/javascript">
+    function checkPswd() {
+        var confirmPassword = "admin";
+        var password = document.getElementById("pswd").value;
+        if (password == confirmPassword) {
+             window.location="main.html";
+        }
+        else{
+            alert("Passwords do not match.");
+        }
+    }
+</script>
 </body>
 </html>
