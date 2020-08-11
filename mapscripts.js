@@ -103,6 +103,8 @@ function homemap() {
   var image = L.imageOverlay('map.png', bounds).addTo(map);
   console.log("Image added");
   map.fitBounds(bounds);
+  poiLayer = L.featureGroup();
+  poiLayer.addTo(map)
   var coorsLayer = L.geoJSON(data, {
   pointToLayer: function (feature, latlng) {
     return L.marker(latlng, {icon: feature.properties.name, draggable:'true'});
