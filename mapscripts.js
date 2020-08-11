@@ -154,6 +154,24 @@ function homemap() {
   },
   onEachFeature: onEachFeature
 }).addTo(poiLayer);
+map.on('zoomend', function() {
+    var currentZoom = map.getZoom();
+    if (currentZoom > 12) {
+        poiLayer.eachLayer(function(layer) {
+            if (layer.feature.properties.num < 0.5)
+                return layer.setIcon(ar_icon_1);
+            else if (feature.properties.num < 1.0)
+                return layer.setIcon(ar_icon_2);
+        });
+    } else {
+        all_testptLayer.eachLayer(function(layer) {
+            if (layer.feature.properties.num < 0.5)
+                return layer.setIcon(ar_icon_1_double_size);
+            else if (feature.properties.num < 1.0)
+                return layer.setIcon(ar_icon_2_double_size);
+        });
+    }
+});
 }
 
 function onEachFeature(feature, layer){
