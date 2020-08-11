@@ -67,7 +67,7 @@ ol {
 	padding: 1em;
 	width: 10em;
 	text-align: center;
-	z-index: 2;
+	z-index: 10;
 }
 
 a {
