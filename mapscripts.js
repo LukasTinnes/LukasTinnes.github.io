@@ -1,4 +1,5 @@
 function homemap() {
+  data = home_data
   console.log("Setting up map");
   var map = L.map('mapid', {
     crs: L.CRS.Simple

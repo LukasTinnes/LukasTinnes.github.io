@@ -1,0 +1,197 @@
+var home_data= {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Pig_in_a_blanket"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2777099609375,
+          51.88327296443745
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Charles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.39306640625,
+          51.86292391360244
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Arthur"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.349121093749998,
+          51.900223473309865
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Timbel"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.30517578125,
+          51.900223473309865
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Boris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.37109375,
+          51.88327296443745
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Trump"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.3765869140625,
+          51.91039070988962
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Jhin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.3216552734375,
+          51.89344403698398
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Maximilia"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.3271484375,
+          51.85274593491392
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Chester"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.52490234375,
+          51.890053935216926
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Ikwii"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.65673828125,
+          51.96119237712624
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Das_Schild"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.167846679687498,
+          51.86631606154489
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Bobby_die_Ratte"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.0250244140625,
+          51.89344403698398
+        ]
+      }
+    }
+  ]
+}
