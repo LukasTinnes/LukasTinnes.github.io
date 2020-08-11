@@ -107,9 +107,50 @@ function homemap() {
   poiLayer.addTo(map)
   var coorsLayer = L.geoJSON(data, {
   pointToLayer: function (feature, latlng) {
-    console.log(feature.properties.name);
-    console.log(Bobby_die_Ratte);
-    return L.marker(latlng, {icon: feature.properties.name, draggable:'true'});
+    switch (feature.properties.name) {
+      case 'Pig_in_a_blanket':
+        return L.marker(latlng, {icon: Pig_in_a_blanket, draggable:'true'});
+        break;
+      case 'Timbel':
+        return L.marker(latlng, {icon: Timbel, draggable:'true'});
+        break;
+      case 'Jhin':
+        return L.marker(latlng, {icon: Jhin, draggable:'true'});
+        break;
+      case 'Maximilia':
+        return L.marker(latlng, {icon: Maximilia, draggable:'true'});
+        break;
+      case 'Charles':
+        return L.marker(latlng, {icon: Charles, draggable:'true'});
+        break;
+      case 'Trump':
+        return L.marker(latlng, {icon: Trump, draggable:'true'});
+        break;
+      case 'Ikwii':
+        return L.marker(latlng, {icon: Ikwii, draggable:'true'});
+        break;
+      case 'Beatrice':
+        return L.marker(latlng, {icon: Beatrice, draggable:'true'});
+        break;
+      case 'Boris':
+        return L.marker(latlng, {icon: Boris, draggable:'true'});
+        break;
+      case 'Arthur':
+        return L.marker(latlng, {icon: Arthur, draggable:'true'});
+        break;
+      case 'Chester':
+        return L.marker(latlng, {icon: Chester, draggable:'true'});
+        break;
+      case 'Das_Schild':
+        return L.marker(latlng, {icon: Das_Schild, draggable:'true'});
+        break;
+      case 'Bobby_die_Ratte':
+        return L.marker(latlng, {icon: Bobby_die_Ratte, draggable:'true'});
+        break;
+      default:
+        return L.marker(latlng, {draggable:'true'});
+    }
+
   },
   onEachFeature: onEachFeature
 }).addTo(poiLayer);
