@@ -107,6 +107,8 @@ function homemap() {
   poiLayer.addTo(map)
   var coorsLayer = L.geoJSON(data, {
   pointToLayer: function (feature, latlng) {
+    console.log(feature.properties.name);
+    console.log(Bobby_die_Ratte);
     return L.marker(latlng, {icon: feature.properties.name, draggable:'true'});
   },
   onEachFeature: onEachFeature
