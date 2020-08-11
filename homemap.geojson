@@ -192,6 +192,22 @@ var home_data= {
           51.89344403698398
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "Beatrice"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.39306640625,
+          51.86292391360244
+        ]
+      }
     }
   ]
 }
