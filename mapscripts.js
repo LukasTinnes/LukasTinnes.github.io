@@ -162,6 +162,13 @@ map.on('zoomend', function() {
 var collection = coorsLayer.toGeoJSON();
 console.log(collection);
 console.log(type(collection));
+// Test geojson save
+var fs = require('fs')
+fs.writeFile('test.geojson', collection, function(err){
+    if(err){
+        console.log(err);
+    }
+});
 }
 
 function onEachFeature(feature, layer){
