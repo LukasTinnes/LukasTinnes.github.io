@@ -1,3 +1,6 @@
+//import filesaver
+import { saveAs } from 'file-saver';
+
 // Icons
 var Pig_in_a_blanket = L.icon({
     iconUrl: 'icons/Pig_in_a_blanket.png',
