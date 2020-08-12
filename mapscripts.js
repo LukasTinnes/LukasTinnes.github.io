@@ -156,7 +156,7 @@ function homemap() {
 }).addTo(poiLayer);
 map.on('zoomend', function() {
     console.log("Zoomend");
-    var newzoom = '' + (2*(mymap.getZoom())) +'px';
+    var newzoom = '' + (2*(map.getZoom())) +'px';
     $('#mapid .images').css({'width':newzoom,'height':newzoom});
 });
 var collection = coorsLayer.toGeoJSON();
