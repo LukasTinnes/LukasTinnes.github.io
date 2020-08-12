@@ -94,14 +94,6 @@ var Bobby_die_Ratte = L.icon({
     popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
 });
 
-function saveToFile(content, filename) {
-      import FileSaver from "FileSaver.js"
-      var file = filename + '.geojson';
-      FileSaver.saveAs(new File([JSON.stringify(content)], file, {
-        type: "text/plain;charset=utf-8"
-      }), file);
-    }
-
 function homemap() {
   data = home_data
   console.log("Setting up map");
