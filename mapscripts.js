@@ -161,6 +161,7 @@ map.on('zoomend', function() {
 });
 var collection = coorsLayer.toGeoJSON();
 console.log(collection);
+console.log(type(collection));
 }
 
 function onEachFeature(feature, layer){
