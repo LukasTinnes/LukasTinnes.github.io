@@ -165,7 +165,7 @@ map.on('zoomend', function() {
                 return layer.setIcon(ar_icon_2);
         });
     } else {
-        all_testptLayer.eachLayer(function(layer) {
+        poiLayer.eachLayer(function(layer) {
             if (layer.feature.properties.num < 0.5)
                 return layer.setIcon(ar_icon_1_double_size);
             else if (feature.properties.num < 1.0)
