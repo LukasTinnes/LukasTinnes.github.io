@@ -164,6 +164,7 @@ console.log(collection);
 // Test geojson save
 var fs = require('fs')
 fs.writeFile('test.geojson', collection, function(err){
+    console.log("fs.writeFile");
     if(err){
         console.log(err);
     }
