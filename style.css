@@ -77,6 +77,11 @@ ol {
 
 a {
 	color: #fff;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  padding: 2em;
+  margin: -2em; 
 	text-decoration: none;
 	text-transform: uppercase;
 }
