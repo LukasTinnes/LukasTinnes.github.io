@@ -169,10 +169,11 @@ map.on('zoomend', function() {
     var newzoom = '' + (2*(map.getZoom())) +'px';
     $('#mapid .images').css({'width':newzoom,'height':newzoom});
 });
-var collection = coorsLayer.toGeoJSON();
-console.log(collection);
-// Test geojson save
-saveToFile(collection, 'test');
+marker.on('dragend', function() {
+    var collection = coorsLayer.toGeoJSON();
+    console.log("marker dragged");
+    console.log(collection)
+});
 }
 
 function onEachFeature(feature, layer){
