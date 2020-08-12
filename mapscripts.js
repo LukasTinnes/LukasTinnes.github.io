@@ -161,7 +161,7 @@ map.on('zoomend', function() {
     var newzoom = '' + (2*(map.getZoom())) +'px';
     $('#mapid .images').css({'width':newzoom,'height':newzoom});
 });
-marker.on('dragend', function() {
+coorsLayer.on('dragend', function() {
     var collection = coorsLayer.toGeoJSON();
     console.log("marker dragged");
     console.log(collection)
