@@ -51,6 +51,9 @@ ol {
 	display: flex;
 }
 
+.leaflet-container {
+    background-color:#2e2b2b;
+}
 .images{}
 
 .sub-menu {
