@@ -80,8 +80,8 @@ a {
   display: inline-block;
   position: relative;
   z-index: 1;
-  padding: 1.5em;
-  margin: 1em;
+  padding: 2em;
+  margin: -2em;
 	text-decoration: none;
 	text-transform: uppercase;
 }
