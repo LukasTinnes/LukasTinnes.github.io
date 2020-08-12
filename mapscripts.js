@@ -91,6 +91,12 @@ var Bobby_die_Ratte = L.icon({
     popupAnchor:  [20, 20] // point from which the popup should open relative to the iconAnchor
 });
 
+function saveToFile(content, filename) {
+      var file = filename + '.geojson';
+      saveAs(new File([JSON.stringify(content)], file, {
+        type: "text/plain;charset=utf-8"
+      }), file);
+    }
 
 function homemap() {
   data = home_data
@@ -162,13 +168,7 @@ map.on('zoomend', function() {
 var collection = coorsLayer.toGeoJSON();
 console.log(collection);
 // Test geojson save
-var fs = require('fs')
-fs.writeFile('test.geojson', collection, function(err){
-    console.log("fs.writeFile");
-    if(err){
-        console.log(err);
-    }
-});
+saveToFile(collection, 'test');
 }
 
 function onEachFeature(feature, layer){
