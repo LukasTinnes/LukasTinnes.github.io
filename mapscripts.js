@@ -130,7 +130,7 @@ function homemap() {
         return L.marker(latlng, {icon: Ikwii, draggable:'true'});
         break;
       case 'Beatrice':
-        return L.marker(latlng, {icon: Beatrice, draggable:'true', className:images});
+        return L.marker(latlng, {icon: Beatrice, draggable:'true', className:'images'});
         break;
       case 'Boris':
         return L.marker(latlng, {icon: Boris, draggable:'true'});

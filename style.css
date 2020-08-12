@@ -51,6 +51,8 @@ ol {
 	display: flex;
 }
 
+.images{}
+
 .sub-menu {
 	flex-direction: row;
 	align-items: flex-start;
