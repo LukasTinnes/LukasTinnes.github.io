@@ -130,7 +130,7 @@ function homemap() {
         return L.marker(latlng, {icon: Ikwii, draggable:'true'});
         break;
       case 'Beatrice':
-        return L.marker(latlng, {icon: Beatrice, draggable:'true'});
+        return L.marker(latlng, {icon: Beatrice, draggable:'true', className:images});
         break;
       case 'Boris':
         return L.marker(latlng, {icon: Boris, draggable:'true'});
@@ -156,22 +156,8 @@ function homemap() {
 }).addTo(poiLayer);
 map.on('zoomend', function() {
     console.log("Zoomend");
-    var currentZoom = map.getZoom();
-    if (currentZoom > 12) {
-        coorsLayer.eachLayer(function(layer) {
-            if (layer.feature.properties.num < 0.5)
-                return layer.setIcon(ar_icon_1);
-            else if (feature.properties.num < 1.0)
-                return layer.setIcon(ar_icon_2);
-        });
-    } else {
-        coorsLayer.eachLayer(function(layer) {
-            if (layer.feature.properties.num < 0.5)
-                return layer.setIcon(ar_icon_1_double_size);
-            else if (feature.properties.num < 1.0)
-                return layer.setIcon(ar_icon_2_double_size);
-        });
-    }
+    var newzoom = '' + (2*(mymap.getZoom())) +'px';
+    $('#mapid .images').css({'width':newzoom,'height':newzoom});
 });
 var collection = drawnItems.toGeoJSON();
 console.log(collection);
