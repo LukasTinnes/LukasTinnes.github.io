@@ -98,7 +98,7 @@ function homemap() {
   data = home_data
   console.log("Setting up map");
   var map = L.map('mapid', {
-    crs: L.CRS.Simple
+    crs: L.CRS.Simple, zoomControl: false 
 });
   var bounds = [[0,0], [1000,1000]];
   console.log("Map bounds set");
