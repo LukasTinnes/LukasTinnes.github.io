@@ -173,6 +173,8 @@ map.on('zoomend', function() {
         });
     }
 });
+var collection = drawnItems.toGeoJSON();
+console.log(collection);
 }
 
 function onEachFeature(feature, layer){
