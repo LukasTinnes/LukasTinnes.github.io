@@ -159,7 +159,7 @@ map.on('zoomend', function() {
     var newzoom = '' + (2*(mymap.getZoom())) +'px';
     $('#mapid .images').css({'width':newzoom,'height':newzoom});
 });
-var collection = drawnItems.toGeoJSON();
+var collection = coorsLayer.toGeoJSON();
 console.log(collection);
 }
 
