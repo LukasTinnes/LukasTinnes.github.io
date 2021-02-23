@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lukas Hobbypage</title>
+    <style>
+        body {
+            background-color: #2A3852 !important;
+            background-blend-mode: color-burn;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 200px;
+            padding-bottom: 30px;
+            color: beige;
+        }
+
+        h2 {
+            color: beige;
+        }</style>
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+    <script src="main_code.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<h1 class="centered">Welcome</h1>
+<!--  3x1 Layout-->
+<div class="button-grid">
+    <button class="btn btn-secondary" name="riddle_button" onclick="daily_riddle()">Daily Riddle</button>
+    <button aria-expanded="false" aria-haspopup="true" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+            id="dropdownMenuButton" type="button">
+        Euler Projects
+    </button>
+    <div aria-labelledby="dropdownMenuButton" class="dropdown-menu">
+        <a class="dropdown-item" href="./euler_1.html">Multiples of 3 and 5</a>
+        <a class="dropdown-item" href="./euler_2.html">Even Fibonacci numbers</a>
+        <a class="dropdown-item" href="#">Largest Primefactor</a>
+    </div>
+</div>
+<h1></h1>
+<div id="riddle">
+    <h2 id="riddle_text"></h2>
+    <button class="btn btn-secondary" name="solution" onclick="reveal_solution()">Solution</button>
+</div>
+
+
+<div id="solution_div">
+    <h2 id="solution"></h2>
+</div>
+
+<script>
+    let elem = document.getElementById("riddle");
+    let sol = document.getElementById("solution_div");
+    sol.style.visibility = "hidden";
+    elem.style.visibility = "hidden";
+</script>
+</body>
+</html>
