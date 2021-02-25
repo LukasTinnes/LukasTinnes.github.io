@@ -134,7 +134,7 @@ function phi(n) {
     return result;
 }
 
-//Polynom functions taken from
+//Fast Polynom functions taken from
 //https://github.com/sibu-github/aks_primality_test/blob/master/lib/aks_test.js
 // Copyright: Sibaprasad Maiti
 
