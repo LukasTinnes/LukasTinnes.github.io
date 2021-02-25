@@ -147,7 +147,7 @@ function poly_remainder(poly, r) {
             res[i % r] += p;
             return res;
         }
-    }, []);
+    })
 }
 function check_poly_mod(a, n, r) {
     const poly = poly_mod_n(a, n);
