@@ -19,7 +19,7 @@ function perfect_power(number) {
                 return true;
             }
         }
-    b++;
+        b++;
     }
     return false;
 }
@@ -80,7 +80,7 @@ function ord_r(n) {
 function gcd_check(n, r) {
     let a = 2;
     while (a <= r) {
-        const temp = gcd(a,n);
+        const temp = gcd(a, n);
         if (1 < temp && temp < n) {
             return true;
         }
@@ -134,6 +134,21 @@ function phi(n) {
     return result;
 }
 
+//Polynom functions taken from
+//https://github.com/sibu-github/aks_primality_test/blob/master/lib/aks_test.js
+// Copyright: Sibaprasad Maiti
+
+function poly_remainder(poly, r) {
+    poly.reduce((res, p, i) => {
+        if (i < r) {
+            res.push(p);
+            return res;
+        } else {
+            res[i % r] += p;
+            return res;
+        }
+    }, []);
+}
 function check_poly_mod(a, n, r) {
     const poly = poly_mod_n(a, n);
     let remainder = poly_remainder(poly, r);
