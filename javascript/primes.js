@@ -209,7 +209,12 @@ function convolve(volume, kernel) {
 
 function test_prime() {
     let solution = parseInt(document.getElementById("prime_input").value);
-    let bool = aks_prime(solution);
-    let h = document.getElementById("prime_solution");
-    h.innerText = "Solution: ".concat(bool.toString());
+    if (solution > 200) {
+        let h = document.getElementById("prime_solution");
+        h.innerText = "Solution: Would probably take a lot of time. I will spare your browser from its death";
+    } else {
+        let bool = aks_prime(solution);
+        let h = document.getElementById("prime_solution");
+        h.innerText = "Solution: ".concat(bool.toString());
+    }
 }
