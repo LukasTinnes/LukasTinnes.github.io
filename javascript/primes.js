@@ -138,6 +138,7 @@ function phi(n) {
 //https://github.com/sibu-github/aks_primality_test/blob/master/lib/aks_test.js
 // Copyright: Sibaprasad Maiti
 
+
 function poly_remainder(poly, r) {
     poly.reduce((res, p, i) => {
         if (i < r) {
@@ -147,8 +148,9 @@ function poly_remainder(poly, r) {
             res[i % r] += p;
             return res;
         }
-    })
+    }, []);
 }
+
 function check_poly_mod(a, n, r) {
     const poly = poly_mod_n(a, n);
     let remainder = poly_remainder(poly, r);
@@ -162,7 +164,7 @@ function poly_mod_n(a, n) {
     let res = [1]; // initializing res to power 0, i.e (x^0)
     let counter = n;
     while (counter > 0) {
-        if (counter & 1) {
+        if (counter && 1) {
             res = convolve(res, x);
             res = mod_n(res, n);
         }
