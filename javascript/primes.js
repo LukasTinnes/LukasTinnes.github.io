@@ -115,7 +115,7 @@ function aks_prime(n) {
         }
         // Step 5
         console.log("Step 5: Polynomial computations")
-        for (let u = 1; u < Math.sqrt(phi(r)) * Math.log2(n); u++) {
+        for (let u = 1; u < Math.floor(Math.sqrt(phi(r)) * Math.log2(n)); u++) {
             if (!check_poly_mod(u, n, r)) {
                 return false;
             }
@@ -140,15 +140,15 @@ function phi(n) {
 
 
 function poly_remainder(poly, r) {
-    poly.reduce((res, p, i) => {
-        if (i < r) {
-            res.push(p);
-            return res;
-        } else {
-            res[i % r] += p;
-            return res;
-        }
-    }, []);
+    return poly.reduce((res, p, i) => {
+    if (i < r) {
+        res.push(p);
+        return res;
+    } else {
+        res[i % r] += p;
+        return res;
+    }
+}, []);
 }
 
 function check_poly_mod(a, n, r) {
