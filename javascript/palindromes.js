@@ -55,9 +55,9 @@ function solve_palindrome() {
     if (inp < 0) {
         alert("There are numbers with a negative amount of digits? Huh... Well I wouldn't know how to solve that.")
     }
-    if (inp > 8) {
+    if (inp >= 8) {
         let h = document.getElementById("prime_solution");
-        h.innerText = "Solution: Bigger n can not be computed this way.";
+        h.innerText = "Solution: Bigger n can not be computed this way. You can proof that for yourself.";
     } else {
         let solution = palindrome(inp);
         let h = document.getElementById("palindrome_solution");
