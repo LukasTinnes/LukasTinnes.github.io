@@ -1,3 +1,4 @@
+
 function perfect_power(number) {
     if (number === 1) {
         return true;
@@ -53,20 +54,17 @@ function gcd(a, b) {
 function order(r, n) {
 
     for (let k = 1; true; k++) {
-        const mod = Math.pow(n, k) % r;
-        console.log(Math.pow(n, k));
-        console.log(mod);
-        if (mod === 1) {
-            console.log("smallest k");
-            console.log(k);
+        const mod = BigInt(Math.pow(n,k) % r);
+        if (mod == 1){
             return k;
         }
     }
 }
 
 // Get the minimum r such that ord_r(n) > log(n)^2
+// Using Bignumber like suggested since this coul become very big very fast
 function ord_r(n) {
-    let sqr = Math.log2(n) * Math.log2(n);
+    const sqr = Math.log2(n) * Math.log2(n);
     let r = 2;
     while (r) {
         if (coprime(r, n) && order(r, n) > sqr) {
@@ -115,7 +113,7 @@ function aks_prime(n) {
         }
         // Step 5
         console.log("Step 5: Polynomial computations")
-        for (let u = 1; u < Math.floor(Math.sqrt(phi(r)) * Math.log2(n)); u++) {
+        for (let u = 1; u <= Math.floor(Math.sqrt(phi(r)) * Math.log2(n)); u++) {
             if (!check_poly_mod(u, n, r)) {
                 return false;
             }
@@ -211,9 +209,9 @@ function convolve(volume, kernel) {
 
 function test_prime() {
     let solution = parseInt(document.getElementById("prime_input").value);
-    if (solution > 200) {
+    if (solution > 30) {
         let h = document.getElementById("prime_solution");
-        h.innerText = "Solution: Would probably take a lot of time. I will spare your browser from its death";
+        h.innerText = "Solution: Would probably take a lot of time or not be possible to compute on a browser. I will spare your browser from its death";
     } else {
         let bool = aks_prime(solution);
         let h = document.getElementById("prime_solution");

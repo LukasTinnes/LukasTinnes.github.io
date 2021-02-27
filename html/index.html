@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Multiples of 3 and 5</title>
+    <title>Lukas Hobbypage</title>
     <style>
         body {
             background-color: #2A3852 !important;
@@ -16,12 +16,12 @@
             color: beige;
         }
 
-        h2, h3 {
+        h2 {
             color: beige;
         }</style>
     <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
-    <script src="javascript/euler.js"></script>
+    <script src="../javascript/main_code.js"></script>
     <script crossorigin="anonymous"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -34,15 +34,36 @@
 
 </head>
 <body>
-<div>
-    <h1>Find the sum of all multiples of 3 or 5 below a certain number</h1>
-    <h2>Just iterate over all numbers in N until you reach the threshold. Add the multiples of 3 or 5 together.</h2>
-    <label for="multiples_input"></label><input type="number" id="multiples_input" min="0" max="2e31">
-    <button class="btn btn-secondary" onclick="multiples()" id="multiples_button">Compute</button>
-    <h3 id="multiples_solution">Solution: </h3>
+<h1 class="centered">Welcome</h1>
+<!--  3x1 Layout-->
+<div class="button-grid">
+    <button class="btn btn-secondary" name="riddle_button" onclick="daily_riddle()">Daily Riddle</button>
+    <button aria-expanded="false" aria-haspopup="true" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+            id="dropdownMenuButton" type="button">
+        Euler Projects
+    </button>
+    <div aria-labelledby="dropdownMenuButton" class="dropdown-menu">
+        <a class="dropdown-item" href="euler_1.html">Multiples of 3 and 5</a>
+        <a class="dropdown-item" href="euler_2.html">Even Fibonacci numbers</a>
+        <a class="dropdown-item" href="euler_3.html">Largest Primefactor</a>
+    </div>
+</div>
+<h1></h1>
+<div id="riddle">
+    <h2 id="riddle_text"></h2>
+    <button class="btn btn-secondary" name="solution" onclick="reveal_solution()">Solution</button>
 </div>
 
-</body>
 
-<button class="btn-block btn-secondary" onclick="location.href='./index.html'">Back</button>
+<div id="solution_div">
+    <h2 id="solution"></h2>
+</div>
+
+<script>
+    let elem = document.getElementById("riddle");
+    let sol = document.getElementById("solution_div");
+    sol.style.visibility = "hidden";
+    elem.style.visibility = "hidden";
+</script>
+</body>
 </html>

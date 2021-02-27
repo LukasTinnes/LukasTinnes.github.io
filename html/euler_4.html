@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Palindromes</title>
+    <style>
+        body {
+            background-color: #2A3852 !important;
+            background-blend-mode: color-burn;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 200px;
+            padding-bottom: 30px;
+            color: beige;
+        }
+
+        h2, h3, h4 {
+            color: beige;
+        }</style>
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+    <script src="../javascript/palindromes.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div>
+    <h1>Find the biggest possible palindrome of 2 numbers with n digits</h1>
+    <h4> Consider the following: p is a palindrome and the product of 2 integers.</h4>
+    <h4> Then: $$ p = l*h = (10^n-x)*(10^n-y) = 10^n*(10^n-(x+y))+xy $$</h4>
+    <h4> Let left be $$10^n-(x+y)$$ and right be $$xy$$</h4>
+    <h4> Looking at the $$ l*h$$ and $$ (10^n-x)*(10^n-y) $$ shows: $$x=(10^n-l)$$</h4>
+    <h4> We can get left from right, by mirroring it. That means, we only need to find right or left. (Excercise to the
+        reader).</h4>
+    <h4> Now, we set $$z=x+y$$ then: $$ right = xy = x((x-x)+y)= x*(z-x) $$</h4>
+    <h4> We can form this as an quadratic equation now: $$ -x^2 +zx + right = 0 $$</h4>
+    <h4> We just need to find an integer solution for x now, to find a palindrome. To make the palindrome as big as
+        possible, we need z as small as possible</h4>
+    <label for="palindrome_input"></label><input id="palindrome_input" max="8" min="0" type="number">
+    <button class="btn btn-secondary" id="palindrome_button" onclick="solve_palindrome()">Compute</button>
+    <h3 id="palindrome_solution">Solution: </h3>
+    <h3 id="palindrome_x">X: </h3>
+    <h3 id="palindrome_y">Y: </h3>
+</div>
+
+</body>
+
+<button class="btn-block btn-secondary" onclick="location.href='index.html'">Back</button>
+</html>
