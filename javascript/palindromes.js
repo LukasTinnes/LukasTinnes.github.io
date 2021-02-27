@@ -3,7 +3,7 @@ function palindrome(n) {
         alert(" What exactly is a number with 0 digits?")
     }
     if (n === 1) {
-        return 9;
+        return [9, 1, 9];
     }
     //Set bounds
     let pow = Math.pow(10, n);
