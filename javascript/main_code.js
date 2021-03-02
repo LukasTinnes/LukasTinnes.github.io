@@ -87,3 +87,61 @@ function get_riddle() {
             return [riddle6, sol6];
     }
 }
+
+function draw_weather(data){
+    let city = document.getElementById("city_name");
+    let temp = document.getElementById("temperature");
+    let min = document.getElementById("temp_min");
+    let max = document.getElementById("temp_max");
+    let feels_like = document.getElementById("feels_like");
+    let wind = document.getElementById("wind");
+    let hum = document.getElementById("humidity");
+    let weather = document.getElementById("currently")
+    city.innerText = "Weather for: " + data.name;
+    weather.innerText = "Currently: " + data.weather[0].description;
+    temp.innerText = "Current Temperature: " + data.main.temp + '°C';
+    max.innerText = "Max Temperature: " + data.main.temp_max + '°C';
+    min.innerText = "Min Temperature: " + data.main.temp_min + '°C';
+    feels_like.innerText = "Feels like: " + data.main.feels_like + '°C';
+    wind.innerText = "Wind: " + get_wind_category(data.wind.speed);
+    hum.innerText = "Humidity: " + data.main.humidity + "%";
+}
+
+function get_wind_category(speed){
+   if (speed < 1){
+       return "Calm"
+   } else if (1 <= speed <=3){
+       return "Light air"
+   } else if (3 < speed <= 7){
+       return " Light Breeze"
+   } else if (7<speed<=12){
+       return "Gentle Breeze, perfect to take a walk"
+   } else if (12 < speed <= 18){
+       return "Moderate Breeze, good to go out and take a walk."
+   } else if (18<speed<=24){
+       return "Fresh Breeze, might be a bit fresh"
+   } else if (24<speed<=31){
+       return "Strong breeze, a bit too windy to go out"
+   } else if (31<speed<=38){
+       return "Moderate Gale"
+   } else if (38 < speed <= 46){
+       return "Fresh Gale, getting slightly dangerous"
+   } else if (46<speed<=54){
+       return "Strong Gale, Buildings can be damaged"
+   } else if (54<speed<=63){
+       return "Whole Gale, Trees should be uprooted, dangerous"
+   } else if (63<speed<=73){
+       return "Storm, really really dangerous"
+   } else { return "HURRICAAAAANNNNEEE, also, you should not be in this area..."}
+}
+
+function weather_report(){
+    let zip = document.getElementById("zip_code").value;
+    fetch("https://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",DE&units=metric&appid=66ef74b879adcf5355e256daaa035c26")
+        .then(response => response.json())
+        .then(data => draw_weather(data));
+
+    setTimeout(weather_report,30000);
+}
+
+weather_report();

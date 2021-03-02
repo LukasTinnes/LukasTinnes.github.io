@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Pythagoras Triples</title>
+    <style>
+        body {
+            background-color: #2A3852 !important;
+            background-blend-mode: color-burn;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 200px;
+            padding-bottom: 30px;
+            color: beige;
+        }
+
+        h2, h3, h4 {
+            color: beige;
+        }</style>
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+
+</head>
+<body>
+<div>
+    <h1>Finds a pythagoras triples (a,b,c) for a given integer n such that a+b+c = n, for a &lt; b &lt; c</h1>
+    <h4>Solving this can be easily done, by checking a constant input for a and solving for b/c.</h4>
+    <h4>a can at most be n/3, so the runtime of this is O(n/3). There are probably better bounds for a, but that's good enough for now</h4>
+    <label for="pytha_input"></label><input id="pytha_input" max="100000000000" min="0" type="number">
+    <button class="btn btn-secondary" id="multiplebutton" onclick="get_triple()">Compute</button>
+    <h3 id="solution_a">a: </h3>
+    <h3 id="solution_b">b: </h3>
+    <h3 id="solution_c">c: </h3>
+</div>
+
+</body>
+
+<button class="btn-block btn-secondary" onclick="location.href='/index.html'">Back</button>
+<script src="javascript/pythagoras_triples.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+<script crossorigin="anonymous"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</html>
