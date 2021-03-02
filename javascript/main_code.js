@@ -134,6 +134,12 @@ function get_wind_category(speed){
        return "Storm, really really dangerous"
    } else { return "HURRICAAAAANNNNEEE, also, you should not be in this area..."}
 }
+function weather_report(){
+    let zip = document.getElementById("zip_code").value;
+    fetch("https://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",DE&units=metric&appid=dff9121bf5fdbc7c706bb2314f0b9911")
+        .then(response => response.json())
+        .then(data => draw_weather(data));
 
-
+    setTimeout(weather_report,30000);
+}
 weather_report();
