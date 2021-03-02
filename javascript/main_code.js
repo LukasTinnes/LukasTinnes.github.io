@@ -88,24 +88,6 @@ function get_riddle() {
     }
 }
 
-function draw_weather(data){
-    let city = document.getElementById("city_name");
-    let temp = document.getElementById("temperature");
-    let min = document.getElementById("temp_min");
-    let max = document.getElementById("temp_max");
-    let feels_like = document.getElementById("feels_like");
-    let wind = document.getElementById("wind");
-    let hum = document.getElementById("humidity");
-    let weather = document.getElementById("currently")
-    city.innerText = "Weather for: " + data.name;
-    weather.innerText = "Currently: " + data.weather[0].description;
-    temp.innerText = "Current Temperature: " + data.main.temp + '°C';
-    max.innerText = "Max Temperature: " + data.main.temp_max + '°C';
-    min.innerText = "Min Temperature: " + data.main.temp_min + '°C';
-    feels_like.innerText = "Feels like: " + data.main.feels_like + '°C';
-    wind.innerText = "Wind: " + get_wind_category(data.wind.speed);
-    hum.innerText = "Humidity: " + data.main.humidity + "%";
-}
 
 function get_wind_category(speed){
    if (speed < 1){
@@ -136,10 +118,27 @@ function get_wind_category(speed){
 }
 function weather_report(){
     let zip = document.getElementById("zip_code").value;
-    fetch("https://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",DE&units=metric&appid=dff9121bf5fdbc7c706bb2314f0b9911")
+    fetch("https://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",DE&units=metric&appid=06cbe675174d6a2b84eae261449356ef")
         .then(response => response.json())
-        .then(data => draw_weather(data));
-
+        .then(data => console.log(data));
     setTimeout(weather_report,30000);
+}
+function draw_weather(data){
+    let city = document.getElementById("city_name");
+    let temp = document.getElementById("temperature");
+    let min = document.getElementById("temp_min");
+    let max = document.getElementById("temp_max");
+    let feels_like = document.getElementById("feels_like");
+    let wind = document.getElementById("wind");
+    let hum = document.getElementById("humidity");
+    let weather = document.getElementById("currently")
+    city.innerText = "Weather for: " + data.name;
+    weather.innerText = "Currently: " + data.weather[0].description;
+    temp.innerText = "Current Temperature: " + data.main.temp + '°C';
+    max.innerText = "Max Temperature: " + data.main.temp_max + '°C';
+    min.innerText = "Min Temperature: " + data.main.temp_min + '°C';
+    feels_like.innerText = "Feels like: " + data.main.feels_like + '°C';
+    wind.innerText = "Wind: " + get_wind_category(data.wind.speed);
+    hum.innerText = "Humidity: " + data.main.humidity + "%";
 }
 weather_report();
