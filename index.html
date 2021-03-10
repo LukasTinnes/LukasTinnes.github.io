@@ -16,35 +16,114 @@
             color: beige;
         }
 
-        h2,h3,h4,h5,h6 {
+        h2, h3, h4, h5, h6 {
             color: beige;
-        }</style>
+        }
+
+        .glow-on-hover {
+            width: 220px;
+            height: 50px;
+            border: none;
+            outline: none;
+            color: #fff;
+            background: #111;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 10px;
+        }
+
+        .glow-on-hover:before {
+            content: '';
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .glow-on-hover:active {
+            color: #000
+        }
+
+        .glow-on-hover:active:after {
+            background: transparent;
+        }
+
+        .glow-on-hover:hover:before {
+            opacity: 1;
+        }
+
+        .glow-on-hover:after {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #111;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+
+        @keyframes glowing {
+            0% {
+                background-position: 0 0;
+            }
+            50% {
+                background-position: 400% 0;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+    </style>
 
 </head>
 <body>
 <h1 class="centered">Welcome</h1>
 <!--  3x1 Layout-->
-<div class="button-grid">
-    <button class="btn btn-secondary" name="riddle_button" onclick="daily_riddle()">Daily Riddle</button>
-    <button aria-expanded="false" aria-haspopup="true" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
-            id="dropdownMenuButton" type="button">
-        Euler Projects
-    </button>
-    <div aria-labelledby="dropdownMenuButton" class="dropdown-menu">
-        <a class="dropdown-item" href="html/euler/euler_1.html">Multiples of 3 and 5</a>
-        <a class="dropdown-item" href="html/euler/euler_2.html">Even Fibonacci numbers</a>
-        <a class="dropdown-item" href="html/euler/euler_3.html">Largest Primefactor</a>
-        <a class="dropdown-item" href="html/euler/euler_4.html">Palindromes</a>
-        <a class="dropdown-item" href="html/euler/euler_5.html">Least common multiples</a>
-        <a class="dropdown-item" href="html/euler/euler_6.html">Pythagoras Triples</a>
-    </div>
-    <button aria-expanded="false" aria-haspopup="true" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
-            id="GamesMenuButton" type="button">
-        Games
-    </button>
-    <div aria-labelledby="GamesMenuButton" class="dropdown-menu">
-        <a class="dropdown-item" href="html/euler/euler_1.html">Multiples of 3 and 5</a>
+<div class="button-toolbar">
+    <div class="btn-group">
+        <button class="btn btn-secondary" name="riddle_button" onclick="daily_riddle()">Daily Riddle</button>
+        </div>
+    <div class="btn-group">
+        <button aria-expanded="false" aria-haspopup="true" class="btn btn-secondary dropdown-toggle"
+                data-toggle="dropdown"
+                id="dropdownMenuButton" type="button">
+            Euler Projects
+        </button>
 
+        <div aria-labelledby="dropdownMenuButton" class="dropdown-menu">
+            <a class="dropdown-item" href="html/euler/euler_1.html">Multiples of 3 and 5</a>
+            <a class="dropdown-item" href="html/euler/euler_2.html">Even Fibonacci numbers</a>
+            <a class="dropdown-item" href="html/euler/euler_3.html">Largest Primefactor</a>
+            <a class="dropdown-item" href="html/euler/euler_4.html">Palindromes</a>
+            <a class="dropdown-item" href="html/euler/euler_5.html">Least common multiples</a>
+            <a class="dropdown-item" href="html/euler/euler_6.html">Pythagoras Triples</a>
+        </div>
+    </div>
+    <div class="btn-group">
+        <button aria-expanded="false" aria-haspopup="true" class="btn btn-secondary dropdown-toggle"
+                data-toggle="dropdown"
+                id="GamesMenuButton" type="button">
+            Games
+        </button>
+        <div aria-labelledby="GamesMenuButton" class="dropdown-menu">
+            <a class="dropdown-item" href="html/games/blackjack.html">Black jack</a>
+        </div>
+    </div>
+    <div class="btn-group">
+        <button class="glow-on-hover" type="button" onclick="location.href='http://weglove.github.io'">Weglove's Website</button>
     </div>
 </div>
 <h1></h1>
