@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>21</title>
+    <style>
+        body {
+            background-color: #2A3852 !important;
+            background-blend-mode: color-burn;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 200px;
+            padding-bottom: 30px;
+            color: beige;
+        }
+
+        h2, h3, h4 {
+            color: beige;
+        }</style>
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+
+</head>
+<body>
+<h1>21 is a simple counting game. You can either add 1 or 2. The winner is the player to count to 21 (or rather the person to force the other one over 21).</h1>
+<div>
+    <button class="btn btn-secondary" id="one_button" onclick="next_turn(1)">Add 1</button>
+    <button class="btn btn-secondary" id="two_button" onclick="next_turn(2)">Add 2</button>
+    <button class="btn btn-secondary" id="clear_button" onclick="clear_game()">Reset</button>
+    <h3 id="score_id">Score: 0</h3>
+    <h3 id="cpu">Computer is waiting for your turn.</h3>
+</div>
+
+</body>
+
+<button class="btn-block btn-secondary" onclick="location.href='../../index.html'">Back</button>
+<script src="../../javascript/games/twentyone.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+<script crossorigin="anonymous"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</html>
