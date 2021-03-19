@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Lukas Hobbypage</title>
+<!-- Fetching once on page load, to obtain better api response times-->
+    <script>fetch('https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=5');</script>
     <style>
         body {
-            background-color: #2A3852 !important;
+            background-color: #2a3852 !important;
             background-blend-mode: color-burn;
         }
 
@@ -16,7 +18,7 @@
             color: beige;
         }
 
-        h2, h3, h4, h5, h6 {
+        h2, h3, h4, h5, h6{
             color: beige;
         }
 
@@ -85,13 +87,35 @@
                 background-position: 0 0;
             }
         }
+        .marquee {
+            width: 100%;
+            line-height: 100%;
+            background-color: #2a3852;
+            color: beige;
+            white-space: nowrap;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .marquee p {
+            display: block;
+            padding-left: 100%;
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0%   { transform: translate(0, 0); }
+            100% { transform: translate(-150%, 0); }
+        }
 
     </style>
 
 </head>
 <body>
 <h1 class="centered">Welcome to my hobbypage</h1>
-<h2>Here are some random cat facts</h2>
+<div align="center"><h5 class="centered">Here are some random cat facts</h5></div>
+
+<div class="marquee">
+    <p><b id="marquee_text">Waiting for a response (Yes it is slow since it is deployed on heroku for free)</b></p>
+</div>
 
 <!--  3x1 Layout-->
 <div class="button-toolbar">

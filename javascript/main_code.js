@@ -24,6 +24,35 @@ function reveal_solution(){
     }
 
 }
+let url = 'https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=5';
+
+// Defining async function
+async function getapi(url) {
+
+    // Storing response
+    const response = await fetch(url);
+
+    // Storing data in form of JSON
+    var data = await response.json();
+    show(data);
+}
+
+
+function show(facts){
+    console.log(facts);
+    let breaker = " | ";
+    let f1 = facts[0].text;
+    let f2 = facts[1].text;
+    let f3 = facts[2].text;
+    let f4 = facts[3].text;
+    let f5 = facts[4].text;
+    //This is dumb, I will fix it later, maybe, possibly
+    let final = f1.concat(breaker.concat(f2.concat(breaker.concat(f3.concat(breaker.concat(f4.concat(breaker.concat(f5))))))))
+    let elem = document.getElementById("marquee_text");
+    elem.innerText = final;
+}
+// Calling that async function
+getapi(url).then(r => r);
 
 function get_riddle() {
     let date = new Date();

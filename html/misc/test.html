@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.9.0/brython.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.9.0/brython_stdlib.js">
+    </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="brython()">
+<button id="mybutton">Button</button>
+<script type="text/python">
+            from browser import document, alert
+
+            def echo(event):
+                alert("Test")
+
+            document["mybutton"].bind("click", echo)
+            </script>
+
+</body>
+</html>
