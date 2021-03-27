@@ -18,7 +18,7 @@
             color: beige;
         }
 
-        h2, h3, h4, h5, h6{
+        h2, h3, h4, h5, h6, b, p{
             color: beige;
         }
 
@@ -87,35 +87,17 @@
                 background-position: 0 0;
             }
         }
-        .marquee {
-            width: 100%;
-            line-height: 100%;
-            background-color: #2a3852;
-            color: beige;
-            white-space: nowrap;
-            overflow: hidden;
-            box-sizing: border-box;
-        }
-        .marquee p {
-            display: block;
-            padding-left: 100%;
-            animation: marquee 20s linear infinite;
-        }
-        @keyframes marquee {
-            0%   { transform: translate(0, 0); }
-            100% { transform: translate(-150%, 0); }
-        }
 
     </style>
 
 </head>
 <body>
 <h1 class="centered">Welcome to my hobbypage</h1>
-<div align="center"><h5 class="centered">Here are some random cat facts</h5></div>
-
-<div class="marquee">
+<div align="center">
+    <h5 class="centered">Here are some random cat facts</h5>
     <p><b id="marquee_text">Waiting for a response (Yes it is slow since it is deployed on heroku for free)</b></p>
 </div>
+
 
 <!--  3x1 Layout-->
 <div class="button-toolbar">
@@ -175,18 +157,21 @@
     elem.style.visibility = "hidden";
 </script>
 <h1></h1>
-<!--<div>-->
-<!--    <h3> Enter your zip Code here to get the current weather</h3>-->
-<!--    <label for="zip_code"></label><input id="zip_code" type="text" value="66663" oninput="weather_report()">-->
-<!--    <h3 id="city_name"></h3>-->
-<!--    <h3 id="currently"></h3>-->
-<!--    <h3 id="temperature"></h3>-->
-<!--    <h3 id="feels_like"></h3>-->
-<!--    <h3 id="temp_min"></h3>-->
-<!--    <h3 id="temp_max"></h3>-->
-<!--    <h3 id="wind"></h3>-->
-<!--    <h3 id="humidity"></h3>-->
-<!--</div>-->
+<div>
+    <h3> Enter your zip Code here to get the current weather</h3>
+    <div>
+        <label for="zip_code"></label><input id="zip_code" type="text" value="66663" oninput="weather_report()">
+        <button class="btn btn-outline-success btn-dark" name="update" onclick="weather_report()">Update weather</button>
+    </div>
+    <h3 id="city_name"></h3>
+    <h3 id="currently"></h3>
+    <h3 id="temperature"></h3>
+    <h3 id="feels_like"></h3>
+    <h3 id="temp_min"></h3>
+    <h3 id="temp_max"></h3>
+    <h3 id="wind"></h3>
+    <h3 id="humidity"></h3>
+</div>
 <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
 <script src="javascript/main_code.js"></script>
