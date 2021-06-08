@@ -3,7 +3,9 @@
 <script src="https://raw.githack.com/jeromeetienne/AR.js/2.0.5/aframe/build/aframe-ar.js"></script><body style='margin : 0px; overflow: scroll;'>
 <a-scene embedded arjs>
     <a-marker preset="hiro">
-        <a-asset-item id="object" src="././Dices blendswap.obj"></a-asset-item>
+        <a-assets>
+            <a-asset-item src="d20.obj"></a-asset-item>
+        </a-assets>
     </a-marker>
     <a-entity camera></a-entity>
 </a-scene>
